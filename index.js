@@ -93,8 +93,14 @@ const collection = [
 
 // PROBLEM #1 //
 
-const setDigitalCode = function(){
-   
+const setDigitalCode = function(collection, value){
+ 
+    for(var i = collection.length - 1; i >= 0; i--){
+        if( i % 2 === 0){
+            collection[i].digitalCode = value
+        }
+    }
+ return collection    
 };
 
 // PROBLEM #2 //
