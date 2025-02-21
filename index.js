@@ -105,16 +105,27 @@ const setDigitalCode = function(collection, value){
 
 // PROBLEM #2 //
 
-const filterByGenreTag = function(){
-    
+const filterByGenreTag = function(array, tag){
+    return array.filter(function(item){
+        return item.genreTags.includes(tag)
+    })
 };
 
 
 
 // PROBLEM #3 //
 
-const filterBySpecialFeatureType = function(){
-    
+const filterBySpecialFeatureType = function(array, type){
+    return array.filter(function(item){
+     for (var i = 0; i < item.specialFeatures.length; i++){
+        if (item.specialFeatures[i].type === type){
+            return true
+        } 
+        
+     }
+     return false;
+     
+    });
 };
 
 
