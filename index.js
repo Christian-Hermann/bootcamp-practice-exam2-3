@@ -130,43 +130,40 @@ const filterBySpecialFeatureType = function(array, type){
 
 
 // PROBLEM #4 //
-/*
+
 const getTopSpecialFeature = function(array, title){
- 
-    if(array.length == 0){
-        return "no movie found matching that title"
-    }
-
-    if(array[0].title === title){
-        return array[0].title.spcialFeature[0]+ " Special Feature: " + array[0].specialFeatures[0].title
-    }
-console.log(array[0])
-
-
-    return getTopSpecialFeature(array.slice(1), title)
+   };
+    
    
-};
 
-*/
+
+
 // PROBLEM #5 //
 
 const mapTitles = function(array){
-   return array.map(function(item){
-    return item.title + " (" + item.year + ") - .dir " + item.director
-   })
 };
-
 
 
 // PROBLEM #6 //
 
 const mapSpecialFeatures = function(array){
+    return array.map(function(movie){
+        return movie.specialfeatures.map(function(item){
+            return item.title
+        });
+    });
     
 };
 
 // PROBLEM #7 //
 
-const createNonsenseString = function(){
+const createNonsenseString = function(array, index){
+    return array.reduce(function(acc, current){
+        acc += current.title[index]
+
+
+        return acc
+    }, "")
     
 };
 
